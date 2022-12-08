@@ -25,9 +25,9 @@ include 'scripts/create.php'
 
         <h1>Quiz</h1>
         <form action="insert.php" method="POST">
-            <label for="inp_what">What?  </label><input type="text" id="inp_what"><br>
-            <label for="inp_amount">How many litres?  </label><input type="number" id="inp_amount"><br>
-            <input type="button">
+            <label for="inp_what">What?  </label><input type="text" id="inp_what" name="inp_what"><br>
+            <label for="inp_amount">How many litres?  </label><input type="number" id="inp_amount" name="inp_amount"><br>
+            <input type="submit" value="send">
         </form>
     </main>
     <footer>

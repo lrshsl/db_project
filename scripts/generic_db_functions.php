@@ -42,4 +42,11 @@ function db_insert($db_connection, $table_name, $elements, $values) {
     return true;
 }
 
+function is_in_database($conn, $table_name, $value) {
+    $query = "SELECT * FROM ".$table_name;
+    $result = $conn->query($query);
+    $found = $result->num_rows > 0;
+    return found;
+}
+
 ?>

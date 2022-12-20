@@ -1,6 +1,7 @@
 <?php
-include 'db_project_specific.php';
-include 'generic_db_functions.php';
+
+// include $_SERVER['DOCUMENT_ROOT']."/scripts/generic_db_functions.php";
+include $_SERVER['DOCUMENT_ROOT']."/scripts/db_project_specific.php";
 
 $servername = "localhost";
 $database = "test_ef5_lrs";
@@ -18,6 +19,7 @@ if (!$conn = db_connect($servername, $database, $username, $password)) {
 
 // db_create_table($conn, $main_table_create_cmd);
 // db_create_table($conn, $beverage_table_create_cmd);
+db_delete_table($conn, "participants");
 db_create_table($conn, "participants");
 add_participant($conn, "lrs", 4);
 

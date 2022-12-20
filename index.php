@@ -22,12 +22,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programming Survey</title>
 </head>
+<?php
+include "scripts/create.php"
+?>
 <body>
     <main>
         <h1>Welcome!</h1>
         <h2>To this toy survey about programming languages</h2>
         <br>
-        <p>Start the <a href="templates/survey_main_page.html">Survey</a>!</p>
+        <p>Start the <a href="templates/login_form.html">Survey</a>!</p>
     </main>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <?php
 
 include $_SERVER['DOCUMENT_ROOT']."/scripts/generic_db_functions.php";
+include $_SERVER['DOCUMENT_ROOT']."/scripts/db_create_strings.php";
 
 $main_table_create_cmd = '
   CREATE TABLE if not exists what_i_drank(
@@ -38,9 +39,10 @@ $beverage_table_create_cmd = '
 function add_participant($conn, $username, $age) {
   if (is_in_database($conn, "participants", "username", $username)) {
     echo "already inserted<br>";
+  } else {
+    db_insert($conn, "participants", "username, age", $username.", ".$age);
+    echo "new participant added<br>" . $username;
   }
-  db_insert($conn, "participants", "username, age", $username.", ".$age);
-  echo "new participant added<br>" . $username;
 }
 
 $create_participant_table_cmd = '
